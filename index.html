@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Το ραντεβού μας 💖</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url("background.jpg") no-repeat center center fixed;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 700px;
+    margin: 20px;
+    padding: 30px;
+
+    background: rgba(101, 67, 33, 0.88);
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    backdrop-filter: blur(4px);
+}
+
+h1, h2 {
+    color: #1f4d3a;
+}
+
+p {
+    color: #6d6a6a;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.image-section img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #ffb3c6;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* BUTTONS WRAPPER */
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 15px 35px;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+/* YES */
+#yesButton {
+    background: #7d8f69;
+}
+
+#yesButton:hover {
+    background: #6f7f5f;
+    transform: scale(1.1);
+}
+
+/* NO */
+.no-btn {
+    background: #9b7ea8;
+}
+
+.no-btn:hover {
+    background: #8a6f99;
+    transform: scale(1.1);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 200px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Γειααα σου αγάπη μου 💕</h1>
+
+    <div class="image-section">
+        <img src="profile.jpg" alt="εμείς">
+    </div>
+
+    <h2>Λοιπόν!!!</h2>
+
+    <p>
+        Την πέμπτη 28/05, μας έχω ετοιμάσει ένα ραντεβού.
+        Όταν σου έκανα δώρο τα παπούτσια με ρώτησες γιατί...
+        ε λοιπόν ήταν ψέμα 😈
+        <br><br>
+        Θα σου δώσω τον λόγο την πέμπτη 😇
+        <br><br>
+        Άστα όλα πάνω μου, στις 21:00 ακριβώς!!!
+        <br><br>
+        - Και να είσαι πανέμορφη όπως πάντα -
+        <br><br>
+        Dress code: θα εκτιμούσα τα νέα σου παπούτσια 😊
+    </p>
+
+    <div class="buttons">
+
+        <button id="yesButton">Yes ✨</button>
+
+        <button class="no-btn"
+            onclick="window.location.href='no.html'">
+            No 😢
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+document.getElementById("yesButton").onclick = function () {
+
+    let clicks = localStorage.getItem("yesClicks") || 0;
+    clicks++;
+    localStorage.setItem("yesClicks", clicks);
+
+    if (clicks == 1) {
+        window.location.href = "xixi.html";
+    } else {
+        window.location.href = "yes.html";
+    }
+};
+</script>
+
+</body>
+</html>
